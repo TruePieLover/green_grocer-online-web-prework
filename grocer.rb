@@ -39,15 +39,12 @@ end
 
 def apply_clearance(cart)
   # code here
-  newprice = 0;
-  cart.each do |item, value|
-        newprice == value[:price]
-        if value[:clearance] == true
-            value[:price] = (value[:price].round(2))
+cart.each do |item, attributes|
+        if attributes[:clearance] == true
+            attributes[:price] = (attributes[:price]*(0.8)).round(2) #takes 20% off the price
         end
     end
     cart
-end
 
 
 def checkout(cart, coupons)
