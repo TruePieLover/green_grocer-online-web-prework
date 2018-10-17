@@ -12,14 +12,6 @@ def consolidate_cart(cart)
 fullcart
 end	
 
-
-
-
-
-
-
-
-
 def apply_coupons(cart, coupons)
   # code here
   coupons.each do |item|
@@ -51,15 +43,17 @@ def apply_clearance(cart)
 
 def checkout(cart, coupons)
   # code here
-   cart = consolidate_cart(cart)
-	    cart = apply_coupons(cart, coupons)
-    cart = apply_clearance(cart)
-    total = 0
-    cart.each do |item, attributes|
+  #Apply functions to cart
+  cart = consolidate_cart(cart)
+	cart = apply_coupons(cart, coupons)
+  cart = apply_clearance(cart)
+  total = 0
+  multiplier = 0.0
+  cart.each do |key, attributes|
         total += attributes[:price] * attributes[:count]
     end
     if total >= 100
-        total = (total*0.9).round(2) #applies 10% discount if >= 100
+        total = (total*0.9).round(2) 
     end
     total
 end
