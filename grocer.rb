@@ -45,6 +45,7 @@ cart.each do |item, attributes|
         end
     end
     cart
+  end
 
 
 def checkout(cart, coupons)
