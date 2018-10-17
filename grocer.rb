@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   cart = apply_clearance(cart)
   total = 0
   multiplier = 0.9
-  cart.each do |key, attributes|
+  cart.each do |key, value|
         total += attributes[:price] * attributes[:count]
     end
     if total >= 100
