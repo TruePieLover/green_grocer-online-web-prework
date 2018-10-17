@@ -48,12 +48,12 @@ def checkout(cart, coupons)
 	cart = apply_coupons(cart, coupons)
   cart = apply_clearance(cart)
   total = 0
-  multiplier = 0.0
+  multiplier = 0.9
   cart.each do |key, attributes|
         total += attributes[:price] * attributes[:count]
     end
     if total >= 100
-        total = (total*0.9).round(2) 
+        total = (total*multiplier).round(2) 
     end
     total
 end
