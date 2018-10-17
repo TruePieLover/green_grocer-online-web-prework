@@ -50,7 +50,7 @@ def checkout(cart, coupons)
   total = 0
   multiplier = 0.9
   cart.each do |key, value|
-        total += attributes[:price] * attributes[:count]
+        total += value[:price] * value[:count]
     end
     if total >= 100
         total = (total*multiplier).round(2) 
