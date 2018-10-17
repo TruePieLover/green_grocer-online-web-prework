@@ -41,8 +41,9 @@ def apply_clearance(cart)
   # code here
   newprice = 0;
   cart.each do |item, value|
+        newprice == value[:price]
         if value[:clearance] == true
-            value[:price] = (value[:price]*(0.8)).round(2) 
+            value[:price] = (newprice.round(2) 
         end
     end
     cart
